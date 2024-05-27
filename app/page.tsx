@@ -1,7 +1,6 @@
 "use client";
 
 import Typewriter from "@/components/Typewriter";
-import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -9,15 +8,15 @@ export default function Home() {
   useEffect(() => {
     setTimeout(() => setIsInitialized(true), 1000);
   }, []);
+
   return (
-    <main className="flex min-h-screen w-9/12 flex-col justify-between p-5 bg-red-50">
+    <main className="flex min-h-screen flex-col justify-between p-10">
       <div>
-        <p className="text-center">Title</p>
+        <p className="">Following is a disappearing message: </p>
         {isInitialized && (
-          <h1>
-            <Typewriter
-              text={`
-The Principal
+          <Typewriter
+            start=""
+            input={`The Principal
 National Model Public School
 
 Anna Nagar
@@ -36,11 +35,9 @@ Thanking you
 Yours sincerely,
 Mithuna M
 Class X C
-Roll No. 32
-            `}
-              delay={100}
-            />
-          </h1>
+Roll No. 32`}
+            delay={100}
+          />
         )}
       </div>
     </main>
